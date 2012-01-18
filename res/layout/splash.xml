@@ -2,12 +2,33 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
+    android:gravity="center_horizontal"
     android:orientation="vertical" >
 
-    <ProgressBar
-        android:id="@+id/progressBar1"
-        style="?android:attr/progressBarStyleLarge"
+    <TextView
+        android:id="@+id/textView1"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:layout_width="match_parent"
+        android:text="@string/app_name"
+        android:gravity="center_horizontal"
+        android:textSize="@dimen/title_size" />
+
+    <ImageView
+        android:id="@+id/imageView1"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
+        android:layout_height="0dp"
+        android:layout_weight="3"
+        android:src="@drawable/logo_portrait"
+    	android:gravity="center_horizontal" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="match_parent"
+        android:text="@string/versioninfo" 
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:gravity="bottom|left"
+        android:textSize="@dimen/version_size" />
 
 </LinearLayout>
