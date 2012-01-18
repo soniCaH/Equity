@@ -1,5 +1,13 @@
 package be.khleuven.vanransbeeck.kevin;
 
-public class EquityHelpActivity extends EquityActivity {
+import android.R;
+import android.os.Bundle;
 
+public class EquityHelpActivity extends EquityActivity {
+	
+	@Override
+	public void onCreate(Bundle savedInstanceState) {
+		super.onCreate(savedInstanceState);
+		setContentView(R.layout.help);
+	}
 }
