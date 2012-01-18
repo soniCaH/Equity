@@ -1,5 +1,11 @@
 package be.khleuven.vanransbeeck.kevin;
 
-public class EquityLanguageActivity extends EquityActivity {
+import android.os.Bundle;
 
+public class EquityLanguageActivity extends EquityActivity {
+	@Override
+	public void onCreate(Bundle savedInstanceState) {
+		super.onCreate(savedInstanceState);
+		setContentView(R.layout.language);
+	}
 }
