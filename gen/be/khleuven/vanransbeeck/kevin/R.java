@@ -14,14 +14,16 @@ public final class R {
         public static final int ic_launcher=0x7f020000;
         public static final int logo=0x7f020001;
     }
+    public static final class id {
+        public static final int progressBar1=0x7f050000;
+    }
     public static final class layout {
         public static final int help=0x7f030000;
         public static final int language=0x7f030001;
-        public static final int layouttest=0x7f030002;
-        public static final int news=0x7f030003;
-        public static final int settings=0x7f030004;
-        public static final int splash=0x7f030005;
-        public static final int translate=0x7f030006;
+        public static final int news=0x7f030002;
+        public static final int settings=0x7f030003;
+        public static final int splash=0x7f030004;
+        public static final int translate=0x7f030005;
     }
     public static final class string {
         public static final int app_name=0x7f040000;
