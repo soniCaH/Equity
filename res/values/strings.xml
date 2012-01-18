@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-
-    <string name="hello">Hello World!</string>
-    <string name="app_name">Equity</string>
-
+    <string name="app_name">Equity Helper</string>
+    <string name="help">Equity Help</string>
+    <string name="splash">Splash Screen</string>
+    <string name="settings">Settings Screen</string>
+    <string name="language">Language Picker</string>
+    <string name="translate">Text Translation Menu</string>
+    <string name="news">News Overview</string>
 </resources>
