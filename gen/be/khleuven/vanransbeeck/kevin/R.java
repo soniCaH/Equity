@@ -20,37 +20,60 @@ public final class R {
         public static final int primary_purple=0x7f050000;
     }
     public static final class dimen {
+        public static final int menu_item_size=0x7f060002;
         public static final int title_size=0x7f060000;
         public static final int version_size=0x7f060001;
     }
     public static final class drawable {
-        public static final int ic_launcher=0x7f020000;
-        public static final int logo=0x7f020001;
-        public static final int logo_portrait=0x7f020002;
+        public static final int exit=0x7f020000;
+        public static final int help=0x7f020001;
+        public static final int ic_launcher=0x7f020002;
+        public static final int logo=0x7f020003;
+        public static final int logo_help=0x7f020004;
+        public static final int logo_portrait=0x7f020005;
+        public static final int news=0x7f020006;
+        public static final int partners=0x7f020007;
+        public static final int settings=0x7f020008;
+        public static final int start=0x7f020009;
     }
     public static final class id {
-        public static final int imageView1=0x7f080001;
-        public static final int textView1=0x7f080000;
-        public static final int textView2=0x7f080002;
+        public static final int ListView_Menu=0x7f080005;
+        public static final int RelativeLayout1=0x7f080000;
+        public static final int imageView1=0x7f080003;
+        public static final int menu_icon=0x7f080006;
+        public static final int menu_label=0x7f080007;
+        public static final int scrollView1=0x7f080002;
+        public static final int textView1=0x7f080001;
+        public static final int textView2=0x7f080004;
     }
     public static final class layout {
         public static final int help=0x7f030000;
         public static final int language=0x7f030001;
         public static final int menu=0x7f030002;
-        public static final int news=0x7f030003;
-        public static final int settings=0x7f030004;
-        public static final int splash=0x7f030005;
-        public static final int translate=0x7f030006;
+        public static final int menu_item=0x7f030003;
+        public static final int news=0x7f030004;
+        public static final int partners=0x7f030005;
+        public static final int settings=0x7f030006;
+        public static final int splash=0x7f030007;
+        public static final int translate=0x7f030008;
     }
     public static final class string {
         public static final int app_name=0x7f070000;
         public static final int help=0x7f070001;
         public static final int language=0x7f070004;
         public static final int menu=0x7f070007;
+        public static final int menu_item_exit=0x7f070010;
+        public static final int menu_item_help=0x7f07000c;
+        public static final int menu_item_news=0x7f07000f;
+        public static final int menu_item_partners=0x7f07000e;
+        public static final int menu_item_settings=0x7f07000d;
+        public static final int menu_item_start=0x7f07000b;
         public static final int news=0x7f070006;
+        public static final int partners=0x7f070008;
         public static final int settings=0x7f070003;
         public static final int splash=0x7f070002;
+        public static final int splashLogoDesc=0x7f07000a;
         public static final int translate=0x7f070005;
-        public static final int versioninfo=0x7f070008;
+        public static final int versioninfo=0x7f070009;
     }
 }
