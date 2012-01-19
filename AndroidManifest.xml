@@ -22,6 +22,8 @@
 			</intent-filter>
         </activity>
         <activity android:name="EquityTranslateActivity" android:label="@string/translate"></activity>
+        <activity android:name="EquityMenuActivity" android:label="@string/menu"></activity>
+        <activity android:label="@string/partners" android:name="EquityPartnersActivity"></activity>
     </application>
 
 </manifest>

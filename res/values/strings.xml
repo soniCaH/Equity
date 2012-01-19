@@ -7,5 +7,7 @@
     <string name="language">Language Picker</string>
     <string name="translate">Text Translation Menu</string>
     <string name="news">News Overview</string>
+    <string name="menu">Menu Overview</string>
+    <string name="partners">Partners Overview</string>
     <string name="versioninfo">Version: 1.0\nCopyright © 2011&#8211;2012\nKevin Van Ransbeeck - Equity</string>
 </resources>
