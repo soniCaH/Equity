@@ -16,17 +16,17 @@
         <activity android:name="EquityNewsActivity" android:label="@string/news"></activity>
         <activity android:name="EquitySettingsActivity" android:label="@string/settings"></activity>
         <activity android:name="EquitySplashActivity" android:label="@string/splash">
-            <intent-filter>
-    			<action android:name="android.intent.action.MAIN" />
-    			<category android:name="android.intent.category.LAUNCHER" />
-			</intent-filter>
-        </activity>
-        <activity android:name="EquityTranslateActivity" android:label="@string/translate"></activity>
-        <activity android:name="EquityMenuActivity" android:label="@string/menu">
 <!--             <intent-filter> -->
 <!--     			<action android:name="android.intent.action.MAIN" /> -->
 <!--     			<category android:name="android.intent.category.LAUNCHER" /> -->
 <!-- 			</intent-filter> -->
+        </activity>
+        <activity android:name="EquityTranslateActivity" android:label="@string/translate"></activity>
+        <activity android:name="EquityMenuActivity" android:label="@string/menu">
+            <intent-filter>
+    			<action android:name="android.intent.action.MAIN" />
+    			<category android:name="android.intent.category.LAUNCHER" />
+			</intent-filter>
         </activity>
         <activity android:label="@string/partners" android:name="EquityPartnersActivity"></activity>
     </application>

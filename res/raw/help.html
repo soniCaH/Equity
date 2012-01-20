@@ -1,0 +1,56 @@
+<style type="text/css">
+body, html { 
+	counter-reset: section;
+	color: #FFF; 
+	background-color: transparent;
+	font-size: 10px;
+}
+
+* {
+	color: #FFF; 
+	background-color: transparent;
+	font-size: 10px;
+}
+
+h1 {
+	font-size: 14px;
+}
+
+h1:before {
+	counter-increment: section;
+	content:counter(section) ". ";
+}
+</style>
+<html><head></head>
+<body>
+<ol>
+	<li><a href="#texts">Texts</a></li>
+	<li><a href="#language">Language Picker</a></li>
+	<li><a href="#news">News</a></li>
+	<li><a href="#settings">Settings</a></li>
+	<li><a href="#help">Help</a></li>
+	<li><a href="#partners">Partners</a></li>
+</ol>
+
+<a name="texts"><h1>Texts</h1></a>
+<p>Click here to start the main functionality of the application</p>
+<p>From this menu choice, you will receive the language picker (see below), after which you can navigate through all available texts, translate them and (if applicable) even use the Text-To-Speech.</p>
+
+<a name="language"><h1>Language Picker</h1></a>
+<p>When starting the application (with the first option - Texts (Start)), you get the option to pick your main language.</p>
+<p>Android supports a few languages with its built-in Text-To-Speech functionality. You can pick any of these languages, or if you wish, you can select another language, which will either have translations provided inside the application, or use the Bing © Translate API to provide on-the-fly translations of the English texts (quality not controlled as it is machine-translated).</p>
+
+<a name="news"><h1>News</h1></a>
+<p>Once the Equity site has been launched publicly, the latest news will be parsed and shown here.</p>
+
+<a name="settings"><h1>Settings</h1></a>
+<p>From this screen you will be able to edit your preferences and application settings.</p>
+
+<a name="help"><h1>Help</h1></a>
+<p>You're currently viewing the help file.</p>
+
+<a name="partners"><h1>Partners</h1></a>
+<p>The Equity project has been funded and founded with the help of different institutions. You'll find more information about them on this page.</p>
+
+</body>
+</html>
