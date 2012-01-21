@@ -1,8 +1,12 @@
 package be.khleuven.vanransbeeck.kevin;
 
+import android.graphics.Color;
 import android.os.Bundle;
-import android.widget.TabHost.TabSpec;
+import android.widget.ImageView;
+import android.widget.RelativeLayout;
 import android.widget.TabHost;
+import android.widget.TabHost.TabSpec;
+import android.widget.TextView;
 
 
 public class EquityLanguageActivity extends EquityActivity {
@@ -12,6 +16,7 @@ public class EquityLanguageActivity extends EquityActivity {
 		setContentView(R.layout.language);
 		
 //	    Translate.setKey("F201136C4151E60657AFB717096F87C70F45EF30");
+		
 		TabHost tabHost = (TabHost) findViewById(R.id.TabHost1);
 		tabHost.setup();
 		
@@ -39,7 +44,7 @@ public class EquityLanguageActivity extends EquityActivity {
 	    
 	    tabHost.addTab(tabSouthAmerica);
 	    
-	    TabSpec tabAsia = tabHost.newTabSpec("asia");
+	    TabSpec tabAsia = tabHost.newTabSpec("asi");
 	    tabAsia.setIndicator(
 				getResources().getString(R.string.lang_continent_asia),
 				getResources().getDrawable(R.drawable.cont_asia));
@@ -63,7 +68,14 @@ public class EquityLanguageActivity extends EquityActivity {
 	    
 	    tabHost.addTab(tabOceania);
 	    
-	    
 	    tabHost.setCurrentTabByTag("europe");
+	    
+	    for (int i = 0; i < tabHost.getTabWidget().getChildCount(); i++) {
+	        RelativeLayout rl = (RelativeLayout) tabHost.getTabWidget().getChildAt(i);
+	        ImageView imageView = (ImageView) rl.getChildAt(0);
+	        TextView textView = (TextView) rl.getChildAt(1);        
+	        textView.setTextColor(Color.parseColor("#9e3bc7"));
+	    }
+
 	}
 }

@@ -20,10 +20,10 @@
     <string name="menu_item_news">News</string>
     <string name="menu_item_exit">Exit</string>
     
-    <string name="lang_continent_europe">Eur</string>
-    <string name="lang_continent_northamerica">N Am</string>
-    <string name="lang_continent_southamerica">S Am</string>
-    <string name="lang_continent_africa">Afr</string>
-    <string name="lang_continent_oceania">Ocean</string>
+    <string name="lang_continent_europe">Eur.</string>
+    <string name="lang_continent_northamerica">N. Am.</string>
+    <string name="lang_continent_southamerica">S. Am.</string>
+    <string name="lang_continent_africa">Afr.</string>
+    <string name="lang_continent_oceania">Oce.</string>
     <string name="lang_continent_asia">Asia</string>
 </resources>
