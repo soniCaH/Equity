@@ -27,29 +27,41 @@ public final class R {
         public static final int version_size=0x7f070001;
     }
     public static final class drawable {
-        public static final int exit=0x7f020000;
-        public static final int help=0x7f020001;
-        public static final int ic_launcher=0x7f020002;
-        public static final int logo=0x7f020003;
-        public static final int logo_help=0x7f020004;
-        public static final int logo_portrait=0x7f020005;
-        public static final int news=0x7f020006;
-        public static final int partners=0x7f020007;
-        public static final int settings=0x7f020008;
-        public static final int start=0x7f020009;
+        public static final int cont_africa=0x7f020000;
+        public static final int cont_asia=0x7f020001;
+        public static final int cont_europe=0x7f020002;
+        public static final int cont_northamerica=0x7f020003;
+        public static final int cont_oceania=0x7f020004;
+        public static final int cont_southamerica=0x7f020005;
+        public static final int exit=0x7f020006;
+        public static final int help=0x7f020007;
+        public static final int ic_launcher=0x7f020008;
+        public static final int logo=0x7f020009;
+        public static final int logo_help=0x7f02000a;
+        public static final int logo_portrait=0x7f02000b;
+        public static final int news=0x7f02000c;
+        public static final int partners=0x7f02000d;
+        public static final int settings=0x7f02000e;
+        public static final int start=0x7f02000f;
     }
     public static final class id {
-        public static final int ListView_Menu=0x7f0a0006;
+        public static final int ListView_Africa=0x7f0a000a;
+        public static final int ListView_Asia=0x7f0a0009;
+        public static final int ListView_Europe=0x7f0a0006;
+        public static final int ListView_Menu=0x7f0a000c;
+        public static final int ListView_NorthAmerica=0x7f0a0007;
+        public static final int ListView_Oceania=0x7f0a000b;
+        public static final int ListView_SouthAmerica=0x7f0a0008;
         public static final int RelativeLayout1=0x7f0a0000;
-        public static final int help_menu_item=0x7f0a000b;
+        public static final int TabHost1=0x7f0a0005;
+        public static final int help_menu_item=0x7f0a0011;
         public static final int imageView1=0x7f0a0003;
-        public static final int menu_icon=0x7f0a0007;
-        public static final int menu_label=0x7f0a0008;
+        public static final int menu_icon=0x7f0a000d;
+        public static final int menu_label=0x7f0a000e;
         public static final int scrollView1=0x7f0a0002;
-        public static final int settings_menu_item=0x7f0a000a;
+        public static final int settings_menu_item=0x7f0a0010;
         public static final int textView1=0x7f0a0001;
-        public static final int textView2=0x7f0a0009;
-        public static final int textView7=0x7f0a0005;
+        public static final int textView2=0x7f0a000f;
         public static final int webView1=0x7f0a0004;
     }
     public static final class layout {
@@ -72,6 +84,12 @@ public final class R {
     public static final class string {
         public static final int app_name=0x7f080000;
         public static final int help=0x7f080001;
+        public static final int lang_continent_africa=0x7f080014;
+        public static final int lang_continent_asia=0x7f080016;
+        public static final int lang_continent_europe=0x7f080011;
+        public static final int lang_continent_northamerica=0x7f080012;
+        public static final int lang_continent_oceania=0x7f080015;
+        public static final int lang_continent_southamerica=0x7f080013;
         public static final int language=0x7f080004;
         public static final int menu=0x7f080007;
         public static final int menu_item_exit=0x7f080010;

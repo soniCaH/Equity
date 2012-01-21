@@ -4,7 +4,7 @@
     <string name="help">Equity Help</string>
     <string name="splash">Splash Screen</string>
     <string name="settings">Settings Screen</string>
-    <string name="language">Language Picker</string>
+    <string name="language">Language</string>
     <string name="translate">Text Translation Menu</string>
     <string name="news">News Overview</string>
     <string name="menu">Main Menu</string>
@@ -19,4 +19,11 @@
     <string name="menu_item_partners">Partners</string>
     <string name="menu_item_news">News</string>
     <string name="menu_item_exit">Exit</string>
+    
+    <string name="lang_continent_europe">Eur</string>
+    <string name="lang_continent_northamerica">N Am</string>
+    <string name="lang_continent_southamerica">S Am</string>
+    <string name="lang_continent_africa">Afr</string>
+    <string name="lang_continent_oceania">Ocean</string>
+    <string name="lang_continent_asia">Asia</string>
 </resources>
