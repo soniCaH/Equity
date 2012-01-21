@@ -1,8 +1,10 @@
 package be.khleuven.vanransbeeck.kevin;
 
 import android.graphics.Color;
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.widget.ImageView;
+import android.widget.ListView;
 import android.widget.RelativeLayout;
 import android.widget.TabHost;
 import android.widget.TabHost.TabSpec;
@@ -17,6 +19,11 @@ public class EquityLanguageActivity extends EquityActivity {
 		
 //	    Translate.setKey("F201136C4151E60657AFB717096F87C70F45EF30");
 		
+		setupTabs();
+		setupLanguages();
+	}
+	
+	private void setupTabs() {
 		TabHost tabHost = (TabHost) findViewById(R.id.TabHost1);
 		tabHost.setup();
 		
@@ -72,10 +79,53 @@ public class EquityLanguageActivity extends EquityActivity {
 	    
 	    for (int i = 0; i < tabHost.getTabWidget().getChildCount(); i++) {
 	        RelativeLayout rl = (RelativeLayout) tabHost.getTabWidget().getChildAt(i);
-	        ImageView imageView = (ImageView) rl.getChildAt(0);
+//	        ImageView imageView = (ImageView) rl.getChildAt(0);
 	        TextView textView = (TextView) rl.getChildAt(1);        
 	        textView.setTextColor(Color.parseColor("#9e3bc7"));
 	    }
-
+	}
+	
+	private void setupLanguages() {
+		setupEurope();
+		setupNorthAmerica();
+		setupSouthAmerica();
+		setupAsia();
+		setupOceania();
+		setupAfrica();
+	}
+	private void setupEurope() {
+		final ListView europeList = (ListView) findViewById(R.id.ListView_Europe);
+		String[] items = {
+			getS(R.string.language_al)
+		}; 
+		Drawable[] flags = {
+			getD(R.drawable.al)	
+		};
+		
+		LanguageAdapter adapt = new LanguageAdapter(this, items, flags);
+		europeList.setAdapter(adapt);
+		
+		// onclicklistener;
+	}
+	private void setupNorthAmerica() {
+		
+	}
+	private void setupSouthAmerica() {
+		
+	}
+	private void setupOceania() {
+		
+	}
+	private void setupAfrica() {
+		
+	}
+	private void setupAsia() {
+		
+	}
+	private String getS(int i) {
+		return getResources().getString(i);
+	}
+	private Drawable getD(int i) {
+		return getResources().getDrawable(i);
 	}
 }
