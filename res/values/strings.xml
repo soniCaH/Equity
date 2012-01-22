@@ -27,5 +27,83 @@
     <string name="lang_continent_oceania">Oceania</string>
     <string name="lang_continent_asia">Asia</string>
 
+	<string name="language_en_gb">English (Great Britain)</string>
+	<string name="language_de_de">German (Germany)</string>
+	<string name="language_fr">French</string>
 	<string name="language_al">Albania</string>
+	<string name="language_ca">Catalan</string>
+	<string name="language_de_at">German (Austria)</string>
+	<string name="language_az">Azeri (Latin)</string>
+	<string name="language_be">Belarusian</string>
+	<string name="language_nl_be">Dutch (Belgium)</string>
+	<string name="language_fr_be">French (Belgium)</string>
+	<string name="language_bg">Bulgarian</string>
+	<string name="language_es_ca">Catalan</string>
+	<string name="language_cs">Czech</string>
+	<string name="language_da_dk">Danish</string>
+	<string name="language_et">Estonian</string>
+	<string name="language_fi_fi">Finnish</string>
+	<string name="language_el">Greek</string>
+	<string name="language_hu">Hungarian</string>
+	<string name="language_it_it">Italian</string>
+	<string name="language_lv">Latvian</string>
+	<string name="language_de_li">German (Liechtenstein)</string>
+	<string name="language_lt">Lithuanian</string>
+	<string name="language_de_lu">German (Luxembourg)</string>
+	<string name="language_fr_lu">French (Luxembourg)</string>
+	<string name="language_nl_nl">Dutch (Netherlands)</string>
+	<string name="language_nb_no">Norwegian</string>
+	<string name="language_pl_pl">Polish</string>
+	<string name="language_pt_pt">Portuguese</string>
+	<string name="language_ro">Romanian</string>
+	<string name="language_ru_ru">Russian</string>
+	<string name="language_sk">Slovak</string>
+	<string name="language_sl">Slovenian</string>
+	<string name="language_es_es">Spanish</string>
+	<string name="language_sv">Swedish</string>
+	<string name="language_de_ch">German (Switzerland)</string>
+	<string name="language_tr_tr">Turkish</string>
+	<string name="language_uk">Ukrainian</string>
+	
+	<string name="language_en_us">English (United States)</string>
+	<string name="language_en_ca">English (Canada)</string>
+	<string name="language_fr_ca">French (Canada)</string>
+	
+	<string name="language_es_ar">Spanish (Argentina)</string>
+	<string name="language_es_bo">Spanish (Bolivia)</string>
+	<string name="language_pt_br">Portuguese (Brazil)</string>
+	<string name="language_es_co">Spanish (Colombia)</string>
+	<string name="language_es_ec">Spanish (Ecuador)</string>
+	<string name="language_ht">Haitian Creole</string>
+	<string name="language_es_mx">Spanish (Mexico)</string>
+	<string name="language_es_py">Spanish (Paraguay)</string>
+	<string name="language_es_pa">Spanish (Panama)</string>
+	<string name="language_es_pr">Spanish (Puerto Rico)</string>
+	<string name="language_es_pe">Spanish (Peru)</string>
+	<string name="language_es_uy">Spanish (Uruguay)</string>
+	<string name="language_es_ve">Spanish (Venezuela)</string>
+	
+	<string name="language_en_au">English (Australia)</string>
+	
+	<string name="language_af">African Dutch</string>
+	<string name="language_he">Hebrew</string>
+	<string name="language_ar">Arabic</string>
+	<string name="language_ar_eg">Arabic (Egypt)</string>
+	<string name="language_ar_ly">Arabic (Lybia)</string>
+	<string name="language_ar_ma">Arabic (Morocco)</string>
+	<string name="language_ar_tn">Arabic (Tunisia)</string>
+	
+	<string name="language_ar_bh">Arabic (Bahrain)</string>
+	<string name="language_zh_CHS">Chinese (Simplified)</string>
+	<string name="language_zh_CHT">Chinese (Traditional)</string>
+	<string name="language_zh_cn">Chinese (Simplified People Republic)</string>
+	<string name="language_zh_hk">Chinese (Hong Kong)</string>
+	<string name="language_zh_tw">Chinese (Taiwan)</string>
+	<string name="language_ar_lb">Arabic (Lebanon)</string>
+	<string name="language_id">Indonesian</string>
+	<string name="language_hi">Hindi</string>
+	<string name="language_en_in">English (India)</string>
+	<string name="language_ja_jp">Japanese</string>
+	<string name="language_ko_kr">Korean</string>
+	<string name="language_ar_qa">Arabic (Qatar)</string>
 </resources>
