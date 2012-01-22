@@ -29,8 +29,8 @@
 
 	<string name="language_en_gb">English (Great Britain)</string>
 	<string name="language_de_de">German (Germany)</string>
-	<string name="language_fr">French</string>
-	<string name="language_al">Albania</string>
+	<string name="language_fr_fr">French</string>
+	<string name="language_al">Albanian</string>
 	<string name="language_ca">Catalan</string>
 	<string name="language_de_at">German (Austria)</string>
 	<string name="language_az">Azeri (Latin)</string>
@@ -62,6 +62,7 @@
 	<string name="language_es_es">Spanish</string>
 	<string name="language_sv">Swedish</string>
 	<string name="language_de_ch">German (Switzerland)</string>
+	<string name="language_it_ch">Italian (Switzerland)</string>
 	<string name="language_tr_tr">Turkish</string>
 	<string name="language_uk">Ukrainian</string>
 	
