@@ -22,7 +22,9 @@ public class EquityTranslateTextActivity extends EquityActivity {
 		
 		Intent callingIntent = getIntent();
 		String langCode = callingIntent.getStringExtra("langCode");
+		// @TODO: enable Speak button if available?
 		
+		// @TODO: CHARSET? 
 		String concat = "";
 		try {
 			Document doc = Jsoup.connect("http://kevin.van-ransbeeck.be/equity/help.html").get();
@@ -43,7 +45,6 @@ public class EquityTranslateTextActivity extends EquityActivity {
 			
 			concat += css;
 			
-
 			Elements body = doc.getElementsByTag("body");
 			Elements html = body.get(0).getAllElements();
 			for(Element e : html) {
