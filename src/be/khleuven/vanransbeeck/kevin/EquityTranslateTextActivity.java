@@ -1,11 +1,13 @@
 package be.khleuven.vanransbeeck.kevin;
 
 import java.io.IOException;
+import java.net.URL;
 import java.util.Locale;
 
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
+import org.jsoup.nodes.TextNode;
 import org.jsoup.select.Elements;
 
 import android.content.Intent;
@@ -44,8 +46,10 @@ public class EquityTranslateTextActivity extends EquityActivity implements OnCli
 		
 		// @TODO: CHARSET? 
 		try {
-			Document doc = Jsoup.connect("http://kevin.van-ransbeeck.be/equity/food_1.html").get();
-			String css = "<style type=\"text/css\">" +
+//			Document doc = Jsoup.connect("http://kevin.van-ransbeeck.be/equity/food_1.html").get();
+			String url = "http://kevin.van-ransbeeck.be/equity/food_1.html";
+			Document doc = Jsoup.parse(new URL(url).openStream(), "UTF-8", url);
+			String css = "<html><head><style type='text/css'>" +
 					"body, html { " +
 						"counter-reset: section;" +
 						"color: #FFFFFF; " +
@@ -57,7 +61,7 @@ public class EquityTranslateTextActivity extends EquityActivity implements OnCli
 					"background-color: #000000;" +
 					"font-size: 12px;" +
 					"}" +
-					"</style>";
+					"</style><meta http-equiv=\"Content-Type\" content=\"text/html; charset=utf-8\"></head><body>";
 			
 			concat += css;
 			
@@ -83,7 +87,7 @@ public class EquityTranslateTextActivity extends EquityActivity implements OnCli
 					concat += "</p>";
 				}
 			}
-			
+			concat += "</body></html>";
 		} catch (IOException e) {
 		} finally {
 			WebView webView = (WebView) findViewById(R.id.webView1);
