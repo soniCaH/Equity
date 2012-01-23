@@ -95,6 +95,9 @@ public class EquityLanguageActivity extends EquityActivity {
 	private void setupEurope() {
 		final ListView europeList = (ListView) findViewById(R.id.ListView_Europe);
 		String[] items = {
+			getS(R.string.language_en_gb),
+			getS(R.string.language_fr_fr),
+			getS(R.string.language_de_de),
 			getS(R.string.language_ca),
 			getS(R.string.language_de_at),
 			getS(R.string.language_nl_be),
@@ -105,8 +108,6 @@ public class EquityLanguageActivity extends EquityActivity {
 			getS(R.string.language_da_dk),
 			getS(R.string.language_et),
 			getS(R.string.language_fi_fi),
-			getS(R.string.language_fr_fr),
-			getS(R.string.language_de_de),
 			getS(R.string.language_el),
 			getS(R.string.language_hu),
 			getS(R.string.language_it_it),
@@ -129,14 +130,16 @@ public class EquityLanguageActivity extends EquityActivity {
 			getS(R.string.language_it_ch),
 			getS(R.string.language_tr_tr),
 			getS(R.string.language_uk),
-			getS(R.string.language_en_gb),
 		}; 
 		String[] langCodes = {
-				"ca", "de-at", "nl-be", "fr-be", "bg", "es-ca", "cs", "da-dk", "et", "fi-fi", "fr-fr", "de-de",
+				"en-gb", "fr-fr", "de-de", "ca", "de-at", "nl-be", "fr-be", "bg", "es-ca", "cs", "da-dk", "et", "fi-fi",
 				"el", "hu", "it-it", "lv", "de-li", "lt", "de-lu", "fr-lu", "nl-nl", "nb-no", "pl-pl", "pt-pt",
-				"ro", "ru-ru", "sk", "sl", "es-es", "sv", "de-ch", "it-ch", "tr-tr", "uk", "en-gb",
+				"ro", "ru-ru", "sk", "sl", "es-es", "sv", "de-ch", "it-ch", "tr-tr", "uk",
 		};
 		Drawable[] flags = {
+			getD(R.drawable.gb),
+			getD(R.drawable.fr),
+			getD(R.drawable.de),
 			getD(R.drawable.ad),
 			getD(R.drawable.at),
 			getD(R.drawable.be),
@@ -147,8 +150,6 @@ public class EquityLanguageActivity extends EquityActivity {
 			getD(R.drawable.dk),
 			getD(R.drawable.ee),
 			getD(R.drawable.fi),
-			getD(R.drawable.fr),
-			getD(R.drawable.de),
 			getD(R.drawable.gr),
 			getD(R.drawable.hu),
 			getD(R.drawable.it),
@@ -171,7 +172,6 @@ public class EquityLanguageActivity extends EquityActivity {
 			getD(R.drawable.ch),
 			getD(R.drawable.tr),
 			getD(R.drawable.ua),
-			getD(R.drawable.gb),
 		};
 		
 		LanguageAdapter adapt = new LanguageAdapter(this, items, flags, langCodes);

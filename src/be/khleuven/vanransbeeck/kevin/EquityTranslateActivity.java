@@ -6,6 +6,8 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.TextView;
 
+import com.memetix.mst.translate.Translate;
+
 public class EquityTranslateActivity extends EquityActivity {
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
@@ -16,7 +18,17 @@ public class EquityTranslateActivity extends EquityActivity {
 		String langCode = callingIntent.getStringExtra("langCode");
 		
 		TextView tv = (TextView) findViewById(R.id.textView1);
-		tv.setText(langCode);
+		
+		// Set the Microsoft Translator API Key - Get yours at http://www.bing.com/developers/createapp.aspx
+	    Translate.setKey("F201136C4151E60657AFB717096F87C70F45EF30");
+
+		try {
+			String translatedText = Translate.execute("Hello World", "en-us", langCode);
+			tv.setText(translatedText);
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
 
 	@Override

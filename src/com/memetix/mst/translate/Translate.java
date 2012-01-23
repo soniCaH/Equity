@@ -43,18 +43,18 @@ public final class Translate extends MicrosoftTranslatorAPI {
      * Translates text from a given Language to another given Language using Microsoft Translator.
      * 
      * @param text The String to translate.
-     * @param from The language code to translate from.
-     * @param to The language code to translate to.
+     * @param string The language code to translate from.
+     * @param langCode The language code to translate to.
      * @return The translated String.
      * @throws Exception on error.
      */
-    public static String execute(final String text, final Language from, final Language to) throws Exception {
+    public static String execute(final String text, final String string, final String langCode) throws Exception {
         //Run the basic service validations first
         validateServiceState(text); 
         final String params = 
                 PARAM_APP_ID + URLEncoder.encode(apiKey,ENCODING) 
-                + PARAM_FROM_LANG + URLEncoder.encode(from.toString(),ENCODING) 
-                + PARAM_TO_LANG + URLEncoder.encode(to.toString(),ENCODING) 
+                + PARAM_FROM_LANG + URLEncoder.encode(string.toString(),ENCODING) 
+                + PARAM_TO_LANG + URLEncoder.encode(langCode.toString(),ENCODING) 
                 + PARAM_TEXT_SINGLE + URLEncoder.encode(text,ENCODING);
         
         final URL url = new URL(SERVICE_URL + params);
@@ -73,7 +73,7 @@ public final class Translate extends MicrosoftTranslatorAPI {
      * @throws Exception on error.
      */
     public static String execute(final String text, final Language to) throws Exception {
-        return execute(text,Language.AUTO_DETECT,to);
+        return execute(text,"",to.toString());
     }
     
     /**
