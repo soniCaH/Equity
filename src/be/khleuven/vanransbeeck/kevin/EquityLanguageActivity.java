@@ -48,7 +48,7 @@ public class EquityLanguageActivity extends EquityActivity {
 	    
 	    tabHost.addTab(tabSouthAmerica);
 	    
-	    TabSpec tabAsia = tabHost.newTabSpec("asi");
+	    TabSpec tabAsia = tabHost.newTabSpec("asia");
 	    tabAsia.setIndicator(
 				getResources().getString(R.string.lang_continent_asia),
 				getResources().getDrawable(R.drawable.cont_asia));
