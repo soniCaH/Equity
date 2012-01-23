@@ -19,15 +19,13 @@ public class EquityTranslateActivity extends EquityActivity {
 		
 		TextView tv = (TextView) findViewById(R.id.textView1);
 		
-		// Set the Microsoft Translator API Key - Get yours at http://www.bing.com/developers/createapp.aspx
 	    Translate.setKey("F201136C4151E60657AFB717096F87C70F45EF30");
 
 		try {
 			String translatedText = Translate.execute("Hello World", "en-us", langCode);
 			tv.setText(translatedText);
 		} catch (Exception e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
+			tv.setText("Unable to contact translation server");
 		}
 	}
 

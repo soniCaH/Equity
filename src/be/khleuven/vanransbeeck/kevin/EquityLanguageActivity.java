@@ -266,7 +266,6 @@ public class EquityLanguageActivity extends EquityActivity {
 	private void setupAfrica() {
 		final ListView africaList = (ListView) findViewById(R.id.ListView_Africa);
 		String[] items = {
-			getS(R.string.language_af),
 			getS(R.string.language_he),
 			getS(R.string.language_ar),
 			getS(R.string.language_ar_eg),
@@ -275,10 +274,9 @@ public class EquityLanguageActivity extends EquityActivity {
 			getS(R.string.language_ar_tn),
 		}; 
 		String[] langCode = {
-				"af", "he", "ar", "ar-eg", "ar-ly", "ar-ma", "ar-tn",
+				"he", "ar", "ar-eg", "ar-ly", "ar-ma", "ar-tn",
 		};
 		Drawable[] flags = {
-			getD(R.drawable.al),
 			getD(R.drawable.al),
 			getD(R.drawable.al),
 			getD(R.drawable.eg),
@@ -301,7 +299,6 @@ public class EquityLanguageActivity extends EquityActivity {
 			getS(R.string.language_zh_CHT),
 			getS(R.string.language_zh_cn),
 			getS(R.string.language_zh_hk),
-			getS(R.string.language_zh_tw),
 			getS(R.string.language_ar_lb),
 			getS(R.string.language_id),
 			getS(R.string.language_hi),
@@ -315,7 +312,7 @@ public class EquityLanguageActivity extends EquityActivity {
 			getS(R.string.language_ar_qa),
 		}; 
 		String[] langCode = {
-			"ar-bh", "zh-CHS", "zh-CHT", "zh-cn", "zh-hk", "zk-tw", "ar-lb", "id", "hi", "en-in",
+			"ar-bh", "zh-CHS", "zh-CHT", "zh-cn", "zh-hk", "ar-lb", "id", "hi", "en-in",
 			"ar", "he", "ja-jp", "ko-kr", "ko-kr", "hi", "ar-qa",
 		};
 		Drawable[] flags = {
@@ -324,7 +321,6 @@ public class EquityLanguageActivity extends EquityActivity {
 			getD(R.drawable.cn),
 			getD(R.drawable.cn),
 			getD(R.drawable.hk),
-			getD(R.drawable.tw),
 			getD(R.drawable.lb),
 			getD(R.drawable.id),
 			getD(R.drawable.in),
