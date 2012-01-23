@@ -8,7 +8,7 @@
     <string name="translate">Text Translation Menu</string>
     <string name="news">News Overview</string>
     <string name="menu">Main Menu</string>
-    <string name="partners">Partners Overview</string>
+    <string name="partners">Partners</string>
     <string name="versioninfo">Version: 1.0\nCopyright © 2011&#8211;2012\nKevin Van Ransbeeck - Equity</string>
     
     <string name="splashLogoDesc">Equity Project</string>
@@ -107,4 +107,7 @@
 	<string name="language_ja_jp">Japanese</string>
 	<string name="language_ko_kr">Korean</string>
 	<string name="language_ar_qa">Arabic (Qatar)</string>
+	
+	<string name="waiting_news_title">Equity News</string>
+	<string name="waiting_news_text">Retrieving news...</string>
 </resources>

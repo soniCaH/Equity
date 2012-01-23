@@ -12,6 +12,11 @@ public class EquityPartnersActivity extends EquityActivity {
 		
 		final ListView menuList = (ListView) findViewById(R.id.ListView_Partners);
 		
+		String[] values = {
+				"KHLeuven", "University College Sj¾lland", "University of Iceland",
+				"ESTeSL", "Soro Kummunity", "Leonardo da Vinci Program",
+		};
+		
 		Drawable[] icons = {
 				getResources().getDrawable(R.drawable.khleuven_port),
 				getResources().getDrawable(R.drawable.ucsjaelland_port),
@@ -21,7 +26,7 @@ public class EquityPartnersActivity extends EquityActivity {
 				getResources().getDrawable(R.drawable.leonardo_port),
 		};
 		
-		PartnerItemAdapter adapt = new PartnerItemAdapter(this, icons);
+		PartnerItemAdapter adapt = new PartnerItemAdapter(this, values, icons);
 		menuList.setAdapter(adapt);
 	}
 }

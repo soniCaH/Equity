@@ -10,11 +10,13 @@ import android.widget.ImageView;
 
 public class PartnerItemAdapter extends ArrayAdapter<String> {
 	private Drawable[] images;
+	private String[] values;
 	private Context context;
 	
-	public PartnerItemAdapter(Context context, Drawable[] images) {
-		super(context, R.layout.partner_item);
+	public PartnerItemAdapter(Context context, String[] values, Drawable[] images) {
+		super(context, R.layout.partner_item, values);
 		this.context = context;
+		this.values = values;
 		this.images = images;
 	}
 	

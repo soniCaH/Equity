@@ -302,24 +302,29 @@ public final class R {
         public static final int ListView_Asia=0x7f0a0009;
         public static final int ListView_Europe=0x7f0a0006;
         public static final int ListView_Menu=0x7f0a0010;
+        public static final int ListView_News=0x7f0a0012;
         public static final int ListView_NorthAmerica=0x7f0a0007;
         public static final int ListView_Oceania=0x7f0a000b;
-        public static final int ListView_Partners=0x7f0a0013;
+        public static final int ListView_Partners=0x7f0a0018;
         public static final int ListView_SouthAmerica=0x7f0a0008;
         public static final int RelativeLayout1=0x7f0a0000;
         public static final int TabHost1=0x7f0a0005;
-        public static final int help_menu_item=0x7f0a0016;
+        public static final int help_menu_item=0x7f0a001b;
         public static final int imageView1=0x7f0a0003;
         public static final int language_code=0x7f0a000f;
         public static final int language_flag=0x7f0a000c;
         public static final int language_label=0x7f0a000d;
         public static final int menu_icon=0x7f0a0011;
         public static final int menu_label=0x7f0a000e;
-        public static final int partner_logo=0x7f0a0012;
+        public static final int news_body=0x7f0a0016;
+        public static final int news_image=0x7f0a0013;
+        public static final int news_timestamp=0x7f0a0015;
+        public static final int news_title=0x7f0a0014;
+        public static final int partner_logo=0x7f0a0017;
         public static final int scrollView1=0x7f0a0002;
-        public static final int settings_menu_item=0x7f0a0015;
+        public static final int settings_menu_item=0x7f0a001a;
         public static final int textView1=0x7f0a0001;
-        public static final int textView2=0x7f0a0014;
+        public static final int textView2=0x7f0a0019;
         public static final int webView1=0x7f0a0004;
     }
     public static final class layout {
@@ -329,17 +334,19 @@ public final class R {
         public static final int menu=0x7f030003;
         public static final int menu_item=0x7f030004;
         public static final int news=0x7f030005;
-        public static final int partner_item=0x7f030006;
-        public static final int partners=0x7f030007;
-        public static final int settings=0x7f030008;
-        public static final int splash=0x7f030009;
-        public static final int translate=0x7f03000a;
+        public static final int news_item=0x7f030006;
+        public static final int partner_item=0x7f030007;
+        public static final int partners=0x7f030008;
+        public static final int settings=0x7f030009;
+        public static final int splash=0x7f03000a;
+        public static final int translate=0x7f03000b;
     }
     public static final class menu {
         public static final int eqoptions=0x7f090000;
     }
     public static final class raw {
-        public static final int help=0x7f050000;
+        public static final int feed=0x7f050000;
+        public static final int help=0x7f050001;
     }
     public static final class string {
         public static final int app_name=0x7f080000;
@@ -440,5 +447,7 @@ public final class R {
         public static final int splashLogoDesc=0x7f08000a;
         public static final int translate=0x7f080005;
         public static final int versioninfo=0x7f080009;
+        public static final int waiting_news_text=0x7f080063;
+        public static final int waiting_news_title=0x7f080062;
     }
 }

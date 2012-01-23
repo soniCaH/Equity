@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0">
+  <channel>
+    <title>Equity News Channel</title>
+    <description>News of the eQUITY project</description>
+    <link>http://kevin.van-ransbeeck.be/feed.xml</link>
+    <item>
+      <title>Kick off meeting eQUITY</title>
+
+      <link>http://www.equityforall.eu</link>
+      <pubDate>Fri, 10 Nov 2011 15:53:34 +0000</pubDate>
+      <image>http://kevin.van-ransbeeck.be/equity/img/logo_equity.png</image>
+      <description>
+        <![CDATA[
+        
+        <p><b>7th till the 10th of November 2010, Copenhagen, Denmark</b></p>
+
+                        <p><b>Participants</b>: Avermaete Tessa, Borrego Rute, Juniusdottir Ragnheidur, Kruse Ane,
+                        Lilleengen Anne-Marie, Mosdol AnnHild, Nissen Asta, Olafsdottir Anna Sigridur, Pettersen
+                        Sverre , Rchaidia Leila, Schoofs Greet, Sousa Joana, Svend Rossen
+                        Invited speakers: Tove Ingerslev, Katrine Kruse, Catharina Gro Nielsen</p>
+                        <p>Second project meeting will be held 6-8 March 2011, Olso, Norway</p>]]>
+      </description>
+      <guid>http://www.equityforall.eu</guid>
+    </item>
+
+    <item>
+      <title>First News Item</title>
+      <link>http://www.equityforall.eu</link>
+      <pubDate>Wed, 05 Oct 2011 17:54:13 +0000</pubDate>
+      <image>http://kevin.van-ransbeeck.be/equity/img/beach.jpg</image>
+      <description>
+        <![CDATA[
+         <p>This is our very first News Item!</p>]]>
+      </description>
+
+      <guid>http://www.equityforall.eu</guid>
+    </item>
+  </channel>
+</rss>
+
