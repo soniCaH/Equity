@@ -16,8 +16,6 @@ public class EquityLanguageActivity extends EquityActivity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.language);
 		
-//	    Translate.setKey("F201136C4151E60657AFB717096F87C70F45EF30");
-		
 		setupTabs();
 		setupLanguages();
 	}

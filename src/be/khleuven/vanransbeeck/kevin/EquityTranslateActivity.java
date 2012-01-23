@@ -17,22 +17,11 @@ public class EquityTranslateActivity extends EquityActivity {
 		
 		Intent callingIntent = getIntent();
 		String langCode = callingIntent.getStringExtra("langCode");
-		
 
 		Intent intent = new Intent(EquityTranslateActivity.this, EquityTranslateTextActivity.class);
+		//intent.putExtra("text", textURL);
 		intent.putExtra("langCode", langCode);
 		startActivity(intent);
-		
-//		TextView tv = (TextView) findViewById(R.id.textView1);
-		
-//	    Translate.setKey("F201136C4151E60657AFB717096F87C70F45EF30");
-//
-//		try {
-//			String translatedText = Translate.execute("Hello World", "en-us", langCode);
-//			tv.setText(translatedText);
-//		} catch (Exception e) {
-//			tv.setText("Unable to contact translation server");
-//		}
 	}
 
 	@Override
