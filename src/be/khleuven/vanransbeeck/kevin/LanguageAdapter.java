@@ -13,16 +13,15 @@ public class LanguageAdapter extends ArrayAdapter<String> {
 	private final Context context;
 	private final String[] values;
 	private final Drawable[] images;
+	private final String[] languageCodes;
 	
-	public LanguageAdapter(Context context, String[] values, Drawable[] images) {
+	public LanguageAdapter(Context context, String[] values, Drawable[] images, String[] languageCodes) {
 		super(context, R.layout.menu_item, values);
 		this.context = context;
 		this.values = values;
 		this.images = images;
+		this.languageCodes = languageCodes;
 	} 
-	public LanguageAdapter(Context context, String[] values) {
-		this(context, values, null);
-	}
 	@Override
 	public View getView(int position, View convertView, ViewGroup parent) {
 		LayoutInflater inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
@@ -30,11 +29,13 @@ public class LanguageAdapter extends ArrayAdapter<String> {
 		
 		TextView textView = (TextView) menu_item_view.findViewById(R.id.language_label);
 		ImageView imageView = (ImageView) menu_item_view.findViewById(R.id.language_flag);
+		TextView textLangCode = (TextView) menu_item_view.findViewById(R.id.language_code);
 		
 		textView.setText(values[position]);
 		if(images.length > 0 && images[position] != null) {
 			imageView.setImageDrawable(images[position]);
 		}
+		textLangCode.setText(languageCodes[position]);
 		
 		return menu_item_view;
 	}

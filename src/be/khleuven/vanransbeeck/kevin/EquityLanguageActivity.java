@@ -3,7 +3,6 @@ package be.khleuven.vanransbeeck.kevin;
 import android.graphics.Color;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
-import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.RelativeLayout;
 import android.widget.TabHost;
@@ -132,6 +131,11 @@ public class EquityLanguageActivity extends EquityActivity {
 			getS(R.string.language_uk),
 			getS(R.string.language_en_gb),
 		}; 
+		String[] langCodes = {
+				"ca", "de-at", "nl-be", "fr-be", "bg", "es-ca", "cs", "da-dk", "et", "fi-fi", "fr-fr", "de-de",
+				"el", "hu", "it-it", "lv", "de-li", "lt", "de-lu", "fr-lu", "nl-nl", "nb-no", "pl-pl", "pt-pt",
+				"ro", "ru-ru", "sk", "sl", "es-es", "sv", "de-ch", "it-ch", "tr-tr", "uk", "en-gb",
+		};
 		Drawable[] flags = {
 			getD(R.drawable.ad),
 			getD(R.drawable.at),
@@ -170,10 +174,11 @@ public class EquityLanguageActivity extends EquityActivity {
 			getD(R.drawable.gb),
 		};
 		
-		LanguageAdapter adapt = new LanguageAdapter(this, items, flags);
+		LanguageAdapter adapt = new LanguageAdapter(this, items, flags, langCodes);
 		europeList.setAdapter(adapt);
 		
 		// onclicklistener;
+		europeList.setOnItemClickListener(new LanguageItemListener(europeList));
 	}
 	private void setupNorthAmerica() {
 		final ListView northamericaList = (ListView) findViewById(R.id.ListView_NorthAmerica);
@@ -182,16 +187,20 @@ public class EquityLanguageActivity extends EquityActivity {
 			getS(R.string.language_en_ca),
 			getS(R.string.language_fr_ca),
 		}; 
+		String[] langCode = {
+			"en-us", "en-ca", "fr-ca",
+		};
 		Drawable[] flags = {
 			getD(R.drawable.us),
 			getD(R.drawable.ca),
 			getD(R.drawable.ca),
 		};
 		
-		LanguageAdapter adapt = new LanguageAdapter(this, items, flags);
+		LanguageAdapter adapt = new LanguageAdapter(this, items, flags, langCode);
 		northamericaList.setAdapter(adapt);
 		
 		// onclicklistener
+		northamericaList.setOnItemClickListener(new LanguageItemListener(northamericaList));
 	}
 	private void setupSouthAmerica() {
 		final ListView southamericaList = (ListView) findViewById(R.id.ListView_SouthAmerica);
@@ -210,6 +219,10 @@ public class EquityLanguageActivity extends EquityActivity {
 			getS(R.string.language_es_uy),
 			getS(R.string.language_es_ve),
 		}; 
+		String[] langCode = {
+			"es-ar", "es-bo", "pt-br", "es-co", "ht", "es-ec", "es-mx", "ex-py", "es-pa", "es-pr", "es-pe", 
+			"es-uy", "es-ve",
+		};
 		Drawable[] flags = {
 			getD(R.drawable.ar),
 			getD(R.drawable.bo),
@@ -226,24 +239,29 @@ public class EquityLanguageActivity extends EquityActivity {
 			getD(R.drawable.ve),
 		};
 		
-		LanguageAdapter adapt = new LanguageAdapter(this, items, flags);
+		LanguageAdapter adapt = new LanguageAdapter(this, items, flags, langCode);
 		southamericaList.setAdapter(adapt);
 		
-		// onclicklistener
+		// onclicklistener		
+		southamericaList.setOnItemClickListener(new LanguageItemListener(southamericaList));
 	}
 	private void setupOceania() {
 		final ListView oceaniaList = (ListView) findViewById(R.id.ListView_Oceania);
 		String[] items = {
 			getS(R.string.language_en_au),
 		}; 
+		String[] langCode = {
+			"en-au",	
+		};
 		Drawable[] flags = {
 			getD(R.drawable.au),
 		};
 		
-		LanguageAdapter adapt = new LanguageAdapter(this, items, flags);
+		LanguageAdapter adapt = new LanguageAdapter(this, items, flags, langCode);
 		oceaniaList.setAdapter(adapt);
 		
 		// onclicklistener
+		oceaniaList.setOnItemClickListener(new LanguageItemListener(oceaniaList));
 	}
 	private void setupAfrica() {
 		final ListView africaList = (ListView) findViewById(R.id.ListView_Africa);
@@ -256,6 +274,9 @@ public class EquityLanguageActivity extends EquityActivity {
 			getS(R.string.language_ar_ma),
 			getS(R.string.language_ar_tn),
 		}; 
+		String[] langCode = {
+				"af", "he", "ar", "ar-eg", "ar-ly", "ar-ma", "ar-tn",
+		};
 		Drawable[] flags = {
 			getD(R.drawable.al),
 			getD(R.drawable.al),
@@ -266,10 +287,11 @@ public class EquityLanguageActivity extends EquityActivity {
 			getD(R.drawable.tn),
 		};
 		
-		LanguageAdapter adapt = new LanguageAdapter(this, items, flags);
+		LanguageAdapter adapt = new LanguageAdapter(this, items, flags, langCode);
 		africaList.setAdapter(adapt);
 		
 		// onclicklistener
+		africaList.setOnItemClickListener(new LanguageItemListener(africaList));
 	}
 	private void setupAsia() {
 		final ListView asiaList = (ListView) findViewById(R.id.ListView_Asia);
@@ -292,6 +314,10 @@ public class EquityLanguageActivity extends EquityActivity {
 			getS(R.string.language_hi),
 			getS(R.string.language_ar_qa),
 		}; 
+		String[] langCode = {
+			"ar-bh", "zh-CHS", "zh-CHT", "zh-cn", "zh-hk", "zk-tw", "ar-lb", "id", "hi", "en-in",
+			"ar", "he", "ja-jp", "ko-kr", "ko-kr", "hi", "ar-qa",
+		};
 		Drawable[] flags = {
 			getD(R.drawable.bh),
 			getD(R.drawable.cn),
@@ -312,7 +338,7 @@ public class EquityLanguageActivity extends EquityActivity {
 			getD(R.drawable.qa),
 		};
 		
-		LanguageAdapter adapt = new LanguageAdapter(this, items, flags);
+		LanguageAdapter adapt = new LanguageAdapter(this, items, flags, langCode);
 		asiaList.setAdapter(adapt);
 		
 		// onclicklistener

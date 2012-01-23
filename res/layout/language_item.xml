@@ -25,6 +25,11 @@
     	android:shadowRadius="5"
     	android:shadowDy="3"
     	android:shadowDx="3" >
-</TextView>
+	</TextView>
+	
+	<TextView 
+	    android:id="@+id/language_code"
+	    android:layout_width="0dp" android:layout_height="0dp"
+	    android:visibility="gone" />
 
 </LinearLayout>

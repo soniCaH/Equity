@@ -4,12 +4,19 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.TextView;
 
 public class EquityTranslateActivity extends EquityActivity {
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.translate);
+		
+		Intent callingIntent = getIntent();
+		String langCode = callingIntent.getStringExtra("langCode");
+		
+		TextView tv = (TextView) findViewById(R.id.textView1);
+		tv.setText(langCode);
 	}
 
 	@Override
