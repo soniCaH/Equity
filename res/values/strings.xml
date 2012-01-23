@@ -110,4 +110,7 @@
 	
 	<string name="waiting_news_title">Equity News</string>
 	<string name="waiting_news_text">Retrieving news...</string>
+	
+	<string name="translate_title_food">Food</string>
+	<string name="translate_title_physical">Physical</string>
 </resources>

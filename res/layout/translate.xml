@@ -3,11 +3,31 @@
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
     android:orientation="vertical" >
-
-    <TextView
-        android:id="@+id/textView1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="TextView" />
+    <ScrollView 
+        android:layout_height="fill_parent"
+        android:layout_width="fill_parent">
+        <LinearLayout
+            android:layout_width="fill_parent"
+    		android:layout_height="wrap_content"
+    		android:orientation="vertical"  >
+	        <TextView
+		        android:id="@+id/textView1"
+		        android:layout_width="match_parent"
+		        android:layout_height="wrap_content"
+		        android:gravity="center"
+		        android:text="@string/translate_title_food"
+		        android:textColor="@color/primary_purple"
+		        android:textSize="@dimen/title_size" />
+	        
+	        <TextView
+		        android:id="@+id/textView2"
+		        android:layout_width="match_parent"
+		        android:layout_height="wrap_content"
+		        android:gravity="center"
+		        android:text="@string/translate_title_physical"
+		        android:textColor="@color/primary_purple"
+		        android:textSize="@dimen/title_size" />
+        </LinearLayout>
+    </ScrollView>
 
 </LinearLayout>

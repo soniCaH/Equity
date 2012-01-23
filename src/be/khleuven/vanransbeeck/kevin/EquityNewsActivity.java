@@ -1,6 +1,5 @@
 package be.khleuven.vanransbeeck.kevin;
 
-import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
 import java.net.URL;
@@ -18,97 +17,122 @@ import org.xml.sax.SAXException;
 import org.xmlpull.v1.XmlPullParserException;
 
 import android.app.ProgressDialog;
+import android.os.AsyncTask;
 import android.os.Bundle;
 import android.widget.ListView;
 
 public class EquityNewsActivity extends EquityActivity {
 	private ListView newsList;
+	private String[] arrTitles;
+	private String[] arrImages;
+	private String[] arrPubDates;
+	private String[] arrBody;
+	
+	
+	private NewsDownloaderTask newsDownloaderTask;
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.news);
-		ProgressDialog pleaseWaitDialog = ProgressDialog.show(
-				EquityNewsActivity.this,
-				getString(R.string.waiting_news_title),
-				getString(R.string.waiting_news_text),
-				true);
-		newsList = (ListView) findViewById(R.id.ListView_News);
-
 		String path = "http://kevin.van-ransbeeck.be/equity/feed.xml";
-		try {
-			URL feedUrl = new URL(path);
-			
-			processNews(feedUrl);
-
-		} catch(IOException io) {
-			io.printStackTrace();
-		} catch (XmlPullParserException e) {
-			e.printStackTrace();
-		} finally {
-			pleaseWaitDialog.dismiss();
-		}
+		
+		newsDownloaderTask = new NewsDownloaderTask();
+		newsDownloaderTask.execute(path);
 	}
 	
-	private void processNews(URL feedXml) throws XmlPullParserException, IOException {
-		int newsItems = 0;
-		ArrayList<String> titles = new ArrayList<String>();
-		ArrayList<String> pubDates = new ArrayList<String>();
-		ArrayList<String> body = new ArrayList<String>();
-		ArrayList<String> images = new ArrayList<String>();
-        InputStream stream = feedXml.openStream();
-		DocumentBuilderFactory dbf = DocumentBuilderFactory.newInstance();
-		DocumentBuilder db;
+	
+	
+	private class NewsDownloaderTask extends AsyncTask<Object, String, Boolean> {
+		ProgressDialog pleaseWaitDialog;
+		@Override
+		protected void onPreExecute() {
+			pleaseWaitDialog = ProgressDialog.show(
+					EquityNewsActivity.this,
+					getString(R.string.waiting_news_title),
+					getString(R.string.waiting_news_text),
+					true);
+		}
+		@Override
+		protected void onPostExecute(Boolean result) {
+			newsList = (ListView) findViewById(R.id.ListView_News);
+			NewsItemAdapter adapt = new NewsItemAdapter(EquityNewsActivity.this, arrTitles, arrPubDates, arrBody, arrImages);
+			newsList.setAdapter(adapt);
+			pleaseWaitDialog.dismiss();
+		}
+		@Override
+		protected Boolean doInBackground(Object... params) {
+			boolean result = false;
+			try {
+				URL feedUrl = new URL((String)params[0]);			
+				processNews(feedUrl);
+			} catch(IOException io) {
+				io.printStackTrace();
+			} catch (XmlPullParserException e) {
+				e.printStackTrace();
+			} finally {
+			}
+			return result;
+		}
 		
-		try {
-			db = dbf.newDocumentBuilder();		
-			Document doc = db.parse(stream);
+		private void processNews(URL feedXml) throws XmlPullParserException, IOException {
+			int newsItems = 0;
+			ArrayList<String> titles = new ArrayList<String>();
+			ArrayList<String> pubDates = new ArrayList<String>();
+			ArrayList<String> body = new ArrayList<String>();
+			ArrayList<String> images = new ArrayList<String>();
+	        InputStream stream = feedXml.openStream();
+			DocumentBuilderFactory dbf = DocumentBuilderFactory.newInstance();
+			DocumentBuilder db;
 			
-			Element e = doc.getDocumentElement();
-			NodeList nodeList = doc.getElementsByTagName("item");
-			
-			for(int i = 0; i < nodeList.getLength(); i++) {
-				Node node = nodeList.item(i);
-				if (node.getNodeType() == Node.ELEMENT_NODE) {
-					Element element = (Element) node;
-					NodeList itemList = element.getChildNodes();
-					for(int j = 0; j < itemList.getLength(); j++) {
-						Node n = itemList.item(j);
-						if (n.getNodeType() == Node.ELEMENT_NODE) {
-							Element el = (Element) n;
-							String value = el.getTextContent();
-							String title = el.getNodeName();
-							if(title.equalsIgnoreCase("title")) {
-								titles.add(value);
-							}
-							if(title.equalsIgnoreCase("pubDate")) {
-								pubDates.add(value);
-							}
-							if(title.equalsIgnoreCase("image")) {
-								images.add(value);
-							}
-							if(title.equalsIgnoreCase("description")) {
-								body.add(value);
+			try {
+				db = dbf.newDocumentBuilder();		
+				Document doc = db.parse(stream);
+				
+				Element e = doc.getDocumentElement();
+				NodeList nodeList = doc.getElementsByTagName("item");
+				
+				for(int i = 0; i < nodeList.getLength(); i++) {
+					Node node = nodeList.item(i);
+					if (node.getNodeType() == Node.ELEMENT_NODE) {
+						Element element = (Element) node;
+						NodeList itemList = element.getChildNodes();
+						for(int j = 0; j < itemList.getLength(); j++) {
+							Node n = itemList.item(j);
+							if (n.getNodeType() == Node.ELEMENT_NODE) {
+								Element el = (Element) n;
+								String value = el.getTextContent();
+								String title = el.getNodeName();
+								if(title.equalsIgnoreCase("title")) {
+									titles.add(value);
+								}
+								if(title.equalsIgnoreCase("pubDate")) {
+									pubDates.add(value);
+								}
+								if(title.equalsIgnoreCase("image")) {
+									images.add(value);
+								}
+								if(title.equalsIgnoreCase("description")) {
+									body.add(value);
+								}
 							}
 						}
 					}
 				}
+			} catch (ParserConfigurationException e) {
+			} catch (SAXException e) {
 			}
-		} catch (ParserConfigurationException e) {
-		} catch (SAXException e) {
+			
+			
+			publishNews(newsItems, titles, images, pubDates, body);
+		}
+		private void publishNews(int newsItems, ArrayList<String> titles,
+				ArrayList<String> images, ArrayList<String> pubDates,
+				ArrayList<String> body) {
+			arrTitles = titles.toArray(new String[newsItems]);
+			arrImages = images.toArray(new String[newsItems]);
+			arrPubDates = pubDates.toArray(new String[newsItems]);
+			arrBody = body.toArray(new String[newsItems]);
 		}
 		
-		
-		publishNews(newsItems, titles, images, pubDates, body);
-	}
-	private void publishNews(int newsItems, ArrayList<String> titles,
-			ArrayList<String> images, ArrayList<String> pubDates,
-			ArrayList<String> body) {
-		String[] arrTitles = titles.toArray(new String[newsItems]);
-		String[] arrImages = images.toArray(new String[newsItems]);
-		String[] arrPubDates = pubDates.toArray(new String[newsItems]);
-		String[] arrBody = body.toArray(new String[newsItems]);
-		
-		NewsItemAdapter adapt = new NewsItemAdapter(this, arrTitles, arrPubDates, arrBody, arrImages);
-		newsList.setAdapter(adapt);
 	}
 }

@@ -446,6 +446,8 @@ public final class R {
         public static final int splash=0x7f080002;
         public static final int splashLogoDesc=0x7f08000a;
         public static final int translate=0x7f080005;
+        public static final int translate_title_food=0x7f080064;
+        public static final int translate_title_physical=0x7f080065;
         public static final int versioninfo=0x7f080009;
         public static final int waiting_news_text=0x7f080063;
         public static final int waiting_news_title=0x7f080062;
