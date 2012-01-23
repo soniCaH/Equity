@@ -30,6 +30,7 @@
 <!-- 			</intent-filter> -->
         </activity>
         <activity android:label="@string/partners" android:name="EquityPartnersActivity"></activity>
+        <activity android:label="@string/translatetext" android:name="EquityTranslateTextActivity"></activity>
     </application>
 
 </manifest>

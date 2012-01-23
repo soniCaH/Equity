@@ -14,13 +14,19 @@ public class EquityTranslateActivity extends EquityActivity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.translate);
 		
+		
 		Intent callingIntent = getIntent();
 		String langCode = callingIntent.getStringExtra("langCode");
 		
-		TextView tv = (TextView) findViewById(R.id.textView1);
-		
-	    Translate.setKey("F201136C4151E60657AFB717096F87C70F45EF30");
 
+		Intent intent = new Intent(EquityTranslateActivity.this, EquityTranslateTextActivity.class);
+		intent.putExtra("langCode", langCode);
+		startActivity(intent);
+		
+//		TextView tv = (TextView) findViewById(R.id.textView1);
+		
+//	    Translate.setKey("F201136C4151E60657AFB717096F87C70F45EF30");
+//
 //		try {
 //			String translatedText = Translate.execute("Hello World", "en-us", langCode);
 //			tv.setText(translatedText);

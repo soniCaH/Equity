@@ -9,6 +9,7 @@
     <string name="news">News Overview</string>
     <string name="menu">Main Menu</string>
     <string name="partners">Partners</string>
+    <string name="translatetext">Text Viewer</string>
     <string name="versioninfo">Version: 1.0\nCopyright © 2011&#8211;2012\nKevin Van Ransbeeck - Equity</string>
     
     <string name="splashLogoDesc">Equity Project</string>
@@ -113,4 +114,6 @@
 	
 	<string name="translate_title_food">Food</string>
 	<string name="translate_title_physical">Physical</string>
+	
+	<string name="translatetext_speak">Speak Out</string>
 </resources>
