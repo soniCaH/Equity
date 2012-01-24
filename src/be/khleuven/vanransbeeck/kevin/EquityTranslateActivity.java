@@ -18,14 +18,6 @@ public class EquityTranslateActivity extends EquityActivity {
 		
 		Intent callingIntent = getIntent();
 		langCode = callingIntent.getStringExtra("langCode");
-		
-		
-		
-
-//		Intent intent = new Intent(EquityTranslateActivity.this, EquityTranslateTextActivity.class);
-//		//intent.putExtra("text", textURL);
-//		intent.putExtra("langCode", langCode);
-//		startActivity(intent);
 	}
 	
 	public void startTextTranslation(final View clickedView) {

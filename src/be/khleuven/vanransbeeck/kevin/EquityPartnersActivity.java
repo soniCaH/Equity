@@ -1,7 +1,10 @@
 package be.khleuven.vanransbeeck.kevin;
 
+import android.content.Intent;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.widget.ListView;
 
 public class EquityPartnersActivity extends EquityActivity {
@@ -13,7 +16,7 @@ public class EquityPartnersActivity extends EquityActivity {
 		final ListView menuList = (ListView) findViewById(R.id.ListView_Partners);
 		
 		String[] values = {
-				"KHLeuven", "University College Sj¾lland", "University of Iceland",
+				"KHLeuven", "University College Sjï¿½lland", "University of Iceland",
 				"ESTeSL", "Soro Kummunity", "Leonardo da Vinci Program",
 		};
 		
@@ -29,4 +32,20 @@ public class EquityPartnersActivity extends EquityActivity {
 		PartnerItemAdapter adapt = new PartnerItemAdapter(this, values, icons);
 		menuList.setAdapter(adapt);
 	}
+	
+	@Override
+	public boolean onCreateOptionsMenu(Menu menu) {
+		super.onCreateOptionsMenu(menu);
+		getMenuInflater().inflate(R.menu.eqoptions, menu);
+		menu.findItem(R.id.help_menu_item).setIntent(new Intent(this, EquityHelpActivity.class));
+		menu.findItem(R.id.settings_menu_item).setIntent(new Intent(this, EquitySettingsActivity.class));
+		return true;
+	}
+
+	@Override
+	public boolean onOptionsItemSelected(MenuItem item) {
+		super.onOptionsItemSelected(item);
+		startActivity(item.getIntent());
+		return true;
+	}	
 }

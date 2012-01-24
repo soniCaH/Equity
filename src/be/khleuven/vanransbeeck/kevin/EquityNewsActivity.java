@@ -17,8 +17,11 @@ import org.xml.sax.SAXException;
 import org.xmlpull.v1.XmlPullParserException;
 
 import android.app.ProgressDialog;
+import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.widget.ListView;
 
 public class EquityNewsActivity extends EquityActivity {
@@ -40,7 +43,21 @@ public class EquityNewsActivity extends EquityActivity {
 		newsDownloaderTask.execute(path);
 	}
 	
-	
+	@Override
+	public boolean onCreateOptionsMenu(Menu menu) {
+		super.onCreateOptionsMenu(menu);
+		getMenuInflater().inflate(R.menu.eqoptions, menu);
+		menu.findItem(R.id.help_menu_item).setIntent(new Intent(this, EquityHelpActivity.class));
+		menu.findItem(R.id.settings_menu_item).setIntent(new Intent(this, EquitySettingsActivity.class));
+		return true;
+	}
+
+	@Override
+	public boolean onOptionsItemSelected(MenuItem item) {
+		super.onOptionsItemSelected(item);
+		startActivity(item.getIntent());
+		return true;
+	}	
 	
 	private class NewsDownloaderTask extends AsyncTask<Object, String, Boolean> {
 		ProgressDialog pleaseWaitDialog;
