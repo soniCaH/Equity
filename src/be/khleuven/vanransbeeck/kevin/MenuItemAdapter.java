@@ -40,6 +40,4 @@ public class MenuItemAdapter extends ArrayAdapter<String> {
 		
 		return menu_item_view;
 	}
-	
-	
 }

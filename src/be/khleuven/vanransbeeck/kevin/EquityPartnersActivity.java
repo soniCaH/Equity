@@ -16,7 +16,7 @@ public class EquityPartnersActivity extends EquityActivity {
 		final ListView menuList = (ListView) findViewById(R.id.ListView_Partners);
 		
 		String[] values = {
-				"KHLeuven", "University College Sj�lland", "University of Iceland",
+				"KHLeuven", "University College Sjælland", "University of Iceland",
 				"ESTeSL", "Soro Kummunity", "Leonardo da Vinci Program",
 		};
 		
