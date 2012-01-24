@@ -8,14 +8,18 @@ import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
+import org.xmlpull.v1.XmlPullParserException;
 
+import android.app.ProgressDialog;
 import android.content.Intent;
+import android.os.AsyncTask;
 import android.os.Bundle;
 import android.speech.tts.TextToSpeech;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.webkit.WebView;
 import android.widget.Button;
+import android.widget.ListView;
 import android.widget.Toast;
 
 import com.memetix.mst.translate.Translate;
@@ -27,6 +31,8 @@ public class EquityTranslateTextActivity extends EquityActivity implements OnCli
     private String file;
     private String concat = "";
 	private String texts = "";
+	private TranslatorTask task;
+	
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -45,57 +51,8 @@ public class EquityTranslateTextActivity extends EquityActivity implements OnCli
 		startActivityForResult(checkTTSIntent, MY_DATA_CHECK_CODE);
 		
 		// @TODO: CHARSET? 
-		try {
-//			Document doc = Jsoup.connect("http://kevin.van-ransbeeck.be/equity/food_1.html").get();
-			Document doc = Jsoup.parse(new URL(file).openStream(), "UTF-8", file);
-			
-			String css = "<html xmlns=\"http://www.w3.org/1999/xhtml\" xml:lang=\"" + langCode + "\">" +
-					"<head><style type='text/css'>" +
-					"body, html { " +
-						"counter-reset: section;" +
-						"color: #FFFFFF; " +
-						"background-color: #000000;" +
-						"font-size: 12px;" +
-					"}" +
-					"* {" +
-					"color: #FFFFFF; " +
-					"background-color: #000000;" +
-					"font-size: 12px;" +
-					"}" +
-					"</style><meta http-equiv=\"Content-Type\" content=\"text/html; charset=utf-8\" /></head><body>";
-			
-			concat += css;
-			
-			Elements body = doc.getElementsByTag("body");
-			Elements html = body.get(0).getAllElements();
-			for(Element e : html) {
-				if(e.tagName().equals("img")) {
-					concat += "<img ";
-					concat += "src='" + e.attr("src") + "' ";
-					concat += "alt='" + e.attr("alt") + "' width='100%'/> ";
-				} 
-				if(e.tagName().equals("p")) {
-					concat += "<p>";
-					String text = e.text();
-					Translate.setKey("F201136C4151E60657AFB717096F87C70F45EF30");
-					try {
-						String translatedText = Translate.execute(text, "en-us", langCode);
-						concat += translatedText;
-						texts += translatedText;
-					} catch (Exception exc) {
-						concat +="Unable to contact translation server";
-					}
-					concat += "</p>";
-				}
-			}
-			concat += "</body></html>";
-		} catch (IOException e) {
-		} finally {
-			WebView webView = (WebView) findViewById(R.id.webView1);
-			webView.setBackgroundColor(R.color.black);
-			//mWebView.loadDataWithBaseURL(null, "將賦予他們的傳教工作標示為", "text/html", "utf-8", null);
-			webView.loadDataWithBaseURL(null, concat, "text/html", "UTF-8", null);
-		}
+		task = new TranslatorTask();
+		task.execute(langCode, file);
 	}
 	
 	protected void onActivityResult(int requestCode, int resultCode, Intent data) {
@@ -166,6 +123,81 @@ public class EquityTranslateTextActivity extends EquityActivity implements OnCli
 	protected void onStop() {
 		super.onStop();
 		tts.shutdown();
+	}
+	
+	private class TranslatorTask extends AsyncTask<Object, String, Boolean> {
+		ProgressDialog pleaseWaitDialog;
+		@Override
+		protected void onPreExecute() {
+			pleaseWaitDialog = ProgressDialog.show(
+					EquityTranslateTextActivity.this,
+					getString(R.string.waiting_translate_title),
+					getString(R.string.waiting_translate_text),
+					true);
+		}
+		@Override
+		protected void onPostExecute(Boolean result) {
+			WebView webView = (WebView) findViewById(R.id.webView1);
+			webView.setBackgroundColor(R.color.black);
+			//mWebView.loadDataWithBaseURL(null, "將賦予他們的傳教工作標示為", "text/html", "utf-8", null);
+			webView.loadDataWithBaseURL(null, concat, "text/html", "UTF-8", null);
+			pleaseWaitDialog.dismiss();
+		}
+		@Override
+		protected Boolean doInBackground(Object... params) {
+			boolean result = false;
+			String langCode = (String) params[0];
+			String file = (String) params[1];
+			try {
+//				Document doc = Jsoup.connect("http://kevin.van-ransbeeck.be/equity/food_1.html").get();
+				Document doc = Jsoup.parse(new URL(file).openStream(), "UTF-8", file);
+				
+				String css = "<html xmlns=\"http://www.w3.org/1999/xhtml\" xml:lang=\"" + langCode + "\">" +
+						"<head><style type='text/css'>" +
+						"body, html { " +
+							"counter-reset: section;" +
+							"color: #FFFFFF; " +
+							"background-color: #000000;" +
+							"font-size: 12px;" +
+						"}" +
+						"* {" +
+						"color: #FFFFFF; " +
+						"background-color: #000000;" +
+						"font-size: 12px;" +
+						"}" +
+						"</style><meta http-equiv=\"Content-Type\" content=\"text/html; charset=utf-8\" /></head><body>";
+				
+				concat += css;
+				
+				Elements body = doc.getElementsByTag("body");
+				Elements html = body.get(0).getAllElements();
+				for(Element e : html) {
+					if(e.tagName().equals("img")) {
+						concat += "<img ";
+						concat += "src='" + e.attr("src") + "' ";
+						concat += "alt='" + e.attr("alt") + "' width='100%'/> ";
+					} 
+					if(e.tagName().equals("p")) {
+						concat += "<p>";
+						String text = e.text();
+						Translate.setKey("F201136C4151E60657AFB717096F87C70F45EF30");
+						try {
+							String translatedText = Translate.execute(text, "en-us", langCode);
+							concat += translatedText;
+							texts += translatedText;
+						} catch (Exception exc) {
+							concat +="Unable to contact translation server";
+						}
+						concat += "</p>";
+					}
+				}
+				concat += "</body></html>";
+			} catch (IOException e) {
+			} finally {
+				
+			}
+			return result;
+		}
 	}
 	
 	

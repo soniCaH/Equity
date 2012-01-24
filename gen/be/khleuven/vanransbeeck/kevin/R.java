@@ -458,17 +458,19 @@ public final class R {
         public static final int splash=0x7f080002;
         public static final int splashLogoDesc=0x7f08000b;
         public static final int translate=0x7f080005;
-        public static final int translate_text_food1=0x7f080067;
-        public static final int translate_text_food2=0x7f080068;
-        public static final int translate_text_physical1=0x7f080069;
-        public static final int translate_text_physical2=0x7f08006a;
-        public static final int translate_text_physical3=0x7f08006b;
-        public static final int translate_title_food=0x7f080065;
-        public static final int translate_title_physical=0x7f080066;
+        public static final int translate_text_food1=0x7f080069;
+        public static final int translate_text_food2=0x7f08006a;
+        public static final int translate_text_physical1=0x7f08006b;
+        public static final int translate_text_physical2=0x7f08006c;
+        public static final int translate_text_physical3=0x7f08006d;
+        public static final int translate_title_food=0x7f080067;
+        public static final int translate_title_physical=0x7f080068;
         public static final int translatetext=0x7f080009;
-        public static final int translatetext_speak=0x7f08006c;
+        public static final int translatetext_speak=0x7f08006e;
         public static final int versioninfo=0x7f08000a;
         public static final int waiting_news_text=0x7f080064;
         public static final int waiting_news_title=0x7f080063;
+        public static final int waiting_translate_text=0x7f080066;
+        public static final int waiting_translate_title=0x7f080065;
     }
 }

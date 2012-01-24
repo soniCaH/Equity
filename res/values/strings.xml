@@ -16,7 +16,7 @@
     
     <string name="menu_item_start">Texts (Start)</string>
     <string name="menu_item_help">Help</string>
-    <string name="menu_item_settings">Settings</string>
+    <string name="menu_item_settings">There are no settings (yet)</string>
     <string name="menu_item_partners">Partners</string>
     <string name="menu_item_news">News</string>
     <string name="menu_item_exit">Exit</string>
@@ -111,6 +111,9 @@
 	
 	<string name="waiting_news_title">Equity News</string>
 	<string name="waiting_news_text">Retrieving news…</string>
+	
+	<string name="waiting_translate_title">Equity Text</string>
+	<string name="waiting_translate_text">Retrieving translation…</string>
 	
 	<string name="translate_title_food">Food</string>
 	<string name="translate_title_physical">Physical</string>
