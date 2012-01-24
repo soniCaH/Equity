@@ -7,7 +7,6 @@ import java.util.Locale;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
-import org.jsoup.nodes.TextNode;
 import org.jsoup.select.Elements;
 
 import android.content.Intent;
@@ -49,7 +48,9 @@ public class EquityTranslateTextActivity extends EquityActivity implements OnCli
 //			Document doc = Jsoup.connect("http://kevin.van-ransbeeck.be/equity/food_1.html").get();
 			String url = "http://kevin.van-ransbeeck.be/equity/food_1.html";
 			Document doc = Jsoup.parse(new URL(url).openStream(), "UTF-8", url);
-			String css = "<html><head><style type='text/css'>" +
+			
+			String css = "<html xmlns=\"http://www.w3.org/1999/xhtml\" xml:lang=\"" + langCode + "\">" +
+					"<head><style type='text/css'>" +
 					"body, html { " +
 						"counter-reset: section;" +
 						"color: #FFFFFF; " +
@@ -61,7 +62,7 @@ public class EquityTranslateTextActivity extends EquityActivity implements OnCli
 					"background-color: #000000;" +
 					"font-size: 12px;" +
 					"}" +
-					"</style><meta http-equiv=\"Content-Type\" content=\"text/html; charset=utf-8\"></head><body>";
+					"</style><meta http-equiv=\"Content-Type\" content=\"text/html; charset=utf-8\" /></head><body>";
 			
 			concat += css;
 			
@@ -92,7 +93,8 @@ public class EquityTranslateTextActivity extends EquityActivity implements OnCli
 		} finally {
 			WebView webView = (WebView) findViewById(R.id.webView1);
 			webView.setBackgroundColor(R.color.black);
-			webView.loadData(concat, "text/html", "UTF-8");
+			//mWebView.loadDataWithBaseURL(null, "將賦予他們的傳教工作標示為", "text/html", "utf-8", null);
+			webView.loadDataWithBaseURL(null, concat, "text/html", "UTF-8", null);
 		}
 	}
 	
@@ -148,7 +150,11 @@ public class EquityTranslateTextActivity extends EquityActivity implements OnCli
 		} catch (NullPointerException npe) {
 			tts.setLanguage(Locale.ENGLISH);
 		} 
-		tts.speak(texts, TextToSpeech.QUEUE_FLUSH, null);
+		try {
+			tts.speak(texts, TextToSpeech.QUEUE_FLUSH, null);
+		} catch (Exception e) {
+	        Toast.makeText(this, "Sorry! Text To Speech failed...", Toast.LENGTH_LONG).show();
+		}
 	}
 
 	@Override
