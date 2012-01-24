@@ -309,8 +309,8 @@ public final class R {
         public static final int ListView_SouthAmerica=0x7f0a0008;
         public static final int RelativeLayout1=0x7f0a0000;
         public static final int TabHost1=0x7f0a0005;
-        public static final int button1=0x7f0a001a;
-        public static final int help_menu_item=0x7f0a001c;
+        public static final int button1=0x7f0a001f;
+        public static final int help_menu_item=0x7f0a0021;
         public static final int imageView1=0x7f0a0003;
         public static final int language_code=0x7f0a000f;
         public static final int language_flag=0x7f0a000c;
@@ -323,9 +323,14 @@ public final class R {
         public static final int news_title=0x7f0a0014;
         public static final int partner_logo=0x7f0a0017;
         public static final int scrollView1=0x7f0a0002;
-        public static final int settings_menu_item=0x7f0a001b;
+        public static final int settings_menu_item=0x7f0a0020;
         public static final int textView1=0x7f0a0001;
         public static final int textView2=0x7f0a0019;
+        public static final int translate_food1=0x7f0a001a;
+        public static final int translate_food2=0x7f0a001b;
+        public static final int translate_physical1=0x7f0a001c;
+        public static final int translate_physical2=0x7f0a001d;
+        public static final int translate_physical3=0x7f0a001e;
         public static final int webView1=0x7f0a0004;
     }
     public static final class layout {
@@ -453,10 +458,15 @@ public final class R {
         public static final int splash=0x7f080002;
         public static final int splashLogoDesc=0x7f08000b;
         public static final int translate=0x7f080005;
+        public static final int translate_text_food1=0x7f080067;
+        public static final int translate_text_food2=0x7f080068;
+        public static final int translate_text_physical1=0x7f080069;
+        public static final int translate_text_physical2=0x7f08006a;
+        public static final int translate_text_physical3=0x7f08006b;
         public static final int translate_title_food=0x7f080065;
         public static final int translate_title_physical=0x7f080066;
         public static final int translatetext=0x7f080009;
-        public static final int translatetext_speak=0x7f080067;
+        public static final int translatetext_speak=0x7f08006c;
         public static final int versioninfo=0x7f08000a;
         public static final int waiting_news_text=0x7f080064;
         public static final int waiting_news_title=0x7f080063;

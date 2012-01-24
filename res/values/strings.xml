@@ -110,10 +110,15 @@
 	<string name="language_ar_qa">Arabic (Qatar)</string>
 	
 	<string name="waiting_news_title">Equity News</string>
-	<string name="waiting_news_text">Retrieving news...</string>
+	<string name="waiting_news_text">Retrieving news…</string>
 	
 	<string name="translate_title_food">Food</string>
 	<string name="translate_title_physical">Physical</string>
+	<string name="translate_text_food1">Learn about Food</string>
+	<string name="translate_text_food2">Healthy Food</string>
+	<string name="translate_text_physical1">Physical Improvements</string>
+	<string name="translate_text_physical2">Physics in the USA</string>
+	<string name="translate_text_physical3">Physical 3</string>
 	
 	<string name="translatetext_speak">Speak Out</string>
 </resources>

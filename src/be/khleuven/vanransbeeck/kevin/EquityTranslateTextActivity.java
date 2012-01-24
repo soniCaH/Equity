@@ -24,8 +24,8 @@ public class EquityTranslateTextActivity extends EquityActivity implements OnCli
     private TextToSpeech tts;
     private int MY_DATA_CHECK_CODE = 0;
     private String langCode;
-    private Button button;
-	private String concat = "";
+    private String file;
+    private String concat = "";
 	private String texts = "";
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
@@ -34,6 +34,7 @@ public class EquityTranslateTextActivity extends EquityActivity implements OnCli
 		
 		Intent callingIntent = getIntent();
 		langCode = callingIntent.getStringExtra("langCode");
+		file = callingIntent.getStringExtra("textFile");
 		// @TODO: enable Speak button if available?
 		
 		Button button = (Button) findViewById(R.id.button1);
@@ -46,8 +47,7 @@ public class EquityTranslateTextActivity extends EquityActivity implements OnCli
 		// @TODO: CHARSET? 
 		try {
 //			Document doc = Jsoup.connect("http://kevin.van-ransbeeck.be/equity/food_1.html").get();
-			String url = "http://kevin.van-ransbeeck.be/equity/food_1.html";
-			Document doc = Jsoup.parse(new URL(url).openStream(), "UTF-8", url);
+			Document doc = Jsoup.parse(new URL(file).openStream(), "UTF-8", file);
 			
 			String css = "<html xmlns=\"http://www.w3.org/1999/xhtml\" xml:lang=\"" + langCode + "\">" +
 					"<head><style type='text/css'>" +

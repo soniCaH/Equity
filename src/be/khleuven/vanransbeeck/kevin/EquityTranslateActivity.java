@@ -4,11 +4,12 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.widget.TextView;
-
-import com.memetix.mst.translate.Translate;
+import android.view.View;
+import android.widget.ExpandableListView;
 
 public class EquityTranslateActivity extends EquityActivity {
+	String langCode;
+	
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -16,11 +17,37 @@ public class EquityTranslateActivity extends EquityActivity {
 		
 		
 		Intent callingIntent = getIntent();
-		String langCode = callingIntent.getStringExtra("langCode");
+		langCode = callingIntent.getStringExtra("langCode");
+		
+		
+		
 
+//		Intent intent = new Intent(EquityTranslateActivity.this, EquityTranslateTextActivity.class);
+//		//intent.putExtra("text", textURL);
+//		intent.putExtra("langCode", langCode);
+//		startActivity(intent);
+	}
+	
+	public void startTextTranslation(final View clickedView) {
+		int id = clickedView.getId();
+		String baseURL = "http://kevin.van-ransbeeck.be/equity/";
+		String file = "";
+		
+		if(id == R.id.translate_food1)
+			file = "food_1.html";
+		else if(id == R.id.translate_food2)
+			file = "food_2.html";
+		else if(id == R.id.translate_physical1)
+			file = "phy_1.html";
+		else if(id == R.id.translate_physical2)
+			file = "phy_2.html";
+		else if(id == R.id.translate_physical3)
+			file = "phy_3.html";
+		
 		Intent intent = new Intent(EquityTranslateActivity.this, EquityTranslateTextActivity.class);
-		//intent.putExtra("text", textURL);
 		intent.putExtra("langCode", langCode);
+		intent.putExtra("textFile", baseURL + file);
+		
 		startActivity(intent);
 	}
 
@@ -38,9 +65,5 @@ public class EquityTranslateActivity extends EquityActivity {
 		super.onOptionsItemSelected(item);
 		startActivity(item.getIntent());
 		return true;
-	}
-	
-	
-	
-	
+	}	
 }

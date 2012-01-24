@@ -3,6 +3,8 @@
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
     android:orientation="vertical" >
+    
+    
     <ScrollView 
         android:layout_height="fill_parent"
         android:layout_width="fill_parent">
@@ -19,6 +21,22 @@
 		        android:textColor="@color/primary_purple"
 		        android:textSize="@dimen/title_size" />
 	        
+	        <TextView 
+	            android:id="@+id/translate_food1"
+	            android:clickable="true"
+	            android:layout_width="fill_parent"
+	            android:layout_height="@dimen/menu_item_size"
+	            android:onClick="startTextTranslation"
+	            android:text="@string/translate_text_food1"/>
+	        <TextView 
+	            android:id="@+id/translate_food2"
+	            android:clickable="true"
+	            android:layout_width="fill_parent"
+	            android:layout_height="@dimen/menu_item_size"
+	            android:onClick="startTextTranslation"
+	            android:text="@string/translate_text_food2"/>
+	        
+	        
 	        <TextView
 		        android:id="@+id/textView2"
 		        android:layout_width="match_parent"
@@ -27,6 +45,28 @@
 		        android:text="@string/translate_title_physical"
 		        android:textColor="@color/primary_purple"
 		        android:textSize="@dimen/title_size" />
+	        
+	        <TextView 
+	            android:id="@+id/translate_physical1"
+	            android:clickable="true"
+	            android:layout_width="fill_parent"
+	            android:layout_height="@dimen/menu_item_size"
+	            android:onClick="startTextTranslation"
+	            android:text="@string/translate_text_physical1"/>
+	        <TextView 
+	            android:id="@+id/translate_physical2"
+	            android:clickable="true"
+	            android:layout_width="fill_parent"
+	            android:layout_height="@dimen/menu_item_size"
+	            android:onClick="startTextTranslation"
+	            android:text="@string/translate_text_physical2"/>
+	        <TextView 
+	            android:id="@+id/translate_physical3"
+	            android:clickable="true"
+	            android:layout_width="fill_parent"
+	            android:layout_height="@dimen/menu_item_size"
+	            android:onClick="startTextTranslation"
+	            android:text="@string/translate_text_physical3"/>
         </LinearLayout>
     </ScrollView>
 
