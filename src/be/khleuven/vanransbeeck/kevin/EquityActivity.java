@@ -16,5 +16,4 @@ public class EquityActivity extends Activity {
 		prefEditor = settings.edit();
 	}
 	
-	
 }
